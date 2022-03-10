@@ -5,17 +5,17 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Your Collection";
-const description = "Remember to replace this description";
+const namePrefix = "MayoPixel";
+const description = "A friendly Samoyed, pixelated around Polygon Network.";
 const baseUri = "ipfs://NewUriToReplace";
 
 const solanaMetadata = {
-  symbol: "YC",
-  seller_fee_basis_points: 1000, // Define how much % you want from secondary market sales 1000 = 10%
-  external_url: "https://www.youtube.com/c/hashlipsnft",
+  symbol: "MPX",
+  seller_fee_basis_points: 300, // Define how much % you want from secondary market sales 1000 = 10% 3%
+  external_url: "https://www.wallofwahini.com/mayopixel",
   creators: [
     {
-      address: "7fXNuer5sbZtaTEPhtJ5g5gNtuyRoKkvxdjEjEnPN4mC",
+      address: "0x0149e3244b4138f35ce14dcca13f760aaed4fa91", // Wallet of Wahini
       share: 100,
     },
   ],
@@ -24,15 +24,17 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 5,
+    growEditionSizeTo: 10,
     layersOrder: [
       { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
+      { name: "Type" },
+      { name: "Clothing" },
+      { name: "Ear" },
+      { name: "Face" },
+      { name: "Arm" },
+      { name: "Nose" },
+      { name: "Head" },
+      { name: "Mouth" },
     ],
   },
 ];
@@ -42,8 +44,8 @@ const shuffleLayerConfigurations = false;
 const debugLogs = false;
 
 const format = {
-  width: 512,
-  height: 512,
+  width: 1000,
+  height: 1000,
   smoothing: false,
 };
 
@@ -72,7 +74,7 @@ const pixelFormat = {
 };
 
 const background = {
-  generate: true,
+  generate: false,
   brightness: "80%",
   static: false,
   default: "#000000",
